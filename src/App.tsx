@@ -13,7 +13,6 @@ const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isSocialPopupOpen, setIsSocialPopupOpen] = useState<boolean>(false);
 
-  // Form handling
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -30,17 +29,13 @@ const App: React.FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    // Add your form submission logic here
     console.log('Form submitted:', formData);
-    // Reset form
     setFormData({ name: '', email: '', message: '' });
   };
 
   useEffect(() => {
-    // Simulate loading
     const loadingTimer = setTimeout(() => setIsLoading(false), 1500);
 
-    // Close social popup when clicking outside
     const handleClickOutside = (event: MouseEvent): void => {
       const popup = document.querySelector('.social-popup');
       const socialBtn = document.querySelector('.social-btn');
@@ -51,7 +46,6 @@ const App: React.FC = () => {
 
     document.addEventListener('mousedown', handleClickOutside as EventListener);
 
-    // Smooth scrolling for navigation links
     const handleNavClick = (e: Event): void => {
       e.preventDefault();
       const target = e.currentTarget as HTMLAnchorElement;
@@ -68,7 +62,6 @@ const App: React.FC = () => {
       link.addEventListener('click', handleNavClick as EventListener);
     });
 
-    // Active section detection
     const handleScroll = (): void => {
       const sections = document.querySelectorAll('section');
       sections.forEach(section => {
@@ -83,7 +76,6 @@ const App: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll);
 
-    // Scroll reveal animation
     const revealElements = document.querySelectorAll('.reveal');
     const revealOnScroll = (): void => {
       revealElements.forEach(element => {
@@ -98,7 +90,6 @@ const App: React.FC = () => {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
 
-    // Cleanup function
     return () => {
       clearTimeout(loadingTimer);
       window.removeEventListener('scroll', handleScroll);
@@ -122,7 +113,7 @@ const App: React.FC = () => {
         <div className="loader">
           <div className="loader-content">
             <div className="spinner"></div>
-            <p>Loading amazing stuff...</p>
+            <p>Loading </p>
           </div>
         </div>
       ) : null}
@@ -156,7 +147,7 @@ const App: React.FC = () => {
                  Specializing in modern web technologies and creative design solutions.</p>
               <div className="hero-stats">
                 <div className="stat-item">
-                  <span className="stat-number">1+</span>
+                  <span className="stat-number">3+</span>
                   <span className="stat-label">Years Experience</span>
                 </div>
                 <div className="stat-item">
@@ -184,12 +175,12 @@ const App: React.FC = () => {
                 />
               </div>
               <div className="profile-info">
-                <h2>[Diyantoro]</h2>
+                <h2>Diyantoro</h2>
                 <p className="profile-title">Front-end Developer</p>
                 <div className="profile-details">
                   <div className="detail-item">
                     <i className="fas fa-map-marker-alt"></i>
-                    <span>[Palembang]</span>
+                    <span>Palembang</span>
                   </div>
                   <div className="detail-item">
                     <i className="fas fa-briefcase"></i>
@@ -207,55 +198,27 @@ const App: React.FC = () => {
                     </button>
                     <div className={`social-popup ${isSocialPopupOpen ? 'active' : ''}`}>
                       <div className="social-grid">
-                        <a 
-                          href="https://github.com/diyantoro" 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="social-item github"
-                        >
+                        <a href="https://github.com/diyantoro" target="_blank" rel="noopener noreferrer" className="social-item github">
                           <i className="fab fa-github"></i>
                           <span>GitHub</span>
                         </a>
-                        <a 
-                          href="https://linkedin.com/in/diyantoro" 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="social-item linkedin"
-                        >
+                        <a href="https://linkedin.com/in/diyantoro" target="_blank" rel="noopener noreferrer" className="social-item linkedin">
                           <i className="fab fa-linkedin"></i>
                           <span>LinkedIn</span>
                         </a>
-                        <a 
-                          href="https://twitter.com/yourusername" 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="social-item twitter"
-                        >
+                        <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-item twitter">
                           <i className="fab fa-twitter"></i>
                           <span>Twitter</span>
                         </a>
-                        <a 
-                          href="https://instagram.com/diyyant_" 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="social-item instagram"
-                        >
+                        <a href="https://instagram.com/diyyant_" target="_blank" rel="noopener noreferrer" className="social-item instagram">
                           <i className="fab fa-instagram"></i>
                           <span>Instagram</span>
                         </a>
-                        <a 
-                          href="mailto:your.diyantoro225@gmail.com" 
-                          className="social-item email"
-                        >
+                        <a href="mailto:your.diyantoro225@gmail.com" className="social-item email">
                           <i className="fas fa-envelope"></i>
                           <span>Email</span>
                         </a>
-                        <a 
-                          href="https://wa.me/085758374175" 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="social-item whatsapp"
-                        >
+                        <a href="https://wa.me/085758374175" target="_blank" rel="noopener noreferrer" className="social-item whatsapp">
                           <i className="fab fa-whatsapp"></i>
                           <span>WhatsApp</span>
                         </a>
@@ -294,7 +257,7 @@ const App: React.FC = () => {
               <div className="personal-info">
                 <div className="info-item">
                   <span className="label">Name:</span>
-                  <span className="value">[Diyantoro]</span>
+                  <span className="value">Diyantoro</span>
                 </div>
                 <div className="info-item">
                   <span className="label">Email:</span>
@@ -302,7 +265,7 @@ const App: React.FC = () => {
                 </div>
                 <div className="info-item">
                   <span className="label">Location:</span>
-                  <span className="value">[Palembang]</span>
+                  <span className="value">Palembang</span>
                 </div>
                 <div className="info-item">
                   <span className="label">Available for:</span>
